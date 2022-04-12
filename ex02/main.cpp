@@ -6,7 +6,7 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 15:24:08 by yeju              #+#    #+#             */
-/*   Updated: 2022/04/12 16:04:10 by yeju             ###   ########.fr       */
+/*   Updated: 2022/04/12 17:25:43 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,8 @@ int main(int, char**)
     std::cout << "mirror[1]: " << mirror[1] << std::endl;
     std::cout << "numbersA[3]: " << numbersA[3] << std::endl;
     
+
+    std::cout << numbers.size() << std::endl;
+
     return 0;
 }

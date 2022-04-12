@@ -6,7 +6,7 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 13:30:47 by yeju              #+#    #+#             */
-/*   Updated: 2022/04/12 16:04:32 by yeju             ###   ########.fr       */
+/*   Updated: 2022/04/12 17:23:38 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ public:
 
     size_t size()
     {
-        return (_count);
+        return (this->_count);
     };
 
     class outOfBounds : public std::exception

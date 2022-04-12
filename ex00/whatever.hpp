@@ -6,7 +6,7 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:57:01 by yeju              #+#    #+#             */
-/*   Updated: 2022/04/12 13:06:15 by yeju             ###   ########.fr       */
+/*   Updated: 2022/04/12 17:21:23 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,47 @@ T& max(T& a, T& b)
     return (b);
 };
 
-#endif
+class Comparison
+{
+private:
+    int _value;
+    Comparison();
+public:
+    Comparison(int value)
+    {
+        _value = value;
+    }
+    ~Comparison() {}
+    
+    Comparison &	operator=(const Comparison &rhs) 
+    {
+        this->_value = rhs._value; 
+        return (*this);
+    }
 
-// 이러한 함수는 모든 유형의 인수로 호출할 수 있습니다. 
-// 유일한 요구 사항은 두 인수의 유형이 동일해야 하고 모든 비교 연산자를 지원해야 한다는 것입니다.
+    bool operator>(Comparison const &rhs) const {
+        return (this->_value > rhs._value);
+    }
+
+    bool operator<(Comparison const &rhs) const {
+        return (this->_value < rhs._value);
+    }
+
+    bool operator>=(Comparison const &rhs) const {
+        return (this->_value >= rhs._value);
+    }
+
+    bool operator<=(Comparison const &rhs) const {
+        return (this->_value <= rhs._value);
+    }
+
+    bool operator==(Comparison const &rhs) const {
+        return (this->_value == rhs._value);
+    }
+
+    bool operator!=(Comparison const &rhs) const {
+        return (this->_value != rhs._value);
+    }
+};
+
+#endif
