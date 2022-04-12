@@ -6,7 +6,7 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:57:01 by yeju              #+#    #+#             */
-/*   Updated: 2022/04/12 16:29:15 by yeju             ###   ########.fr       */
+/*   Updated: 2022/04/12 16:33:15 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 template <typename T>
-void puls(T& a)
+void plus(T& a)
 {
     ++a;
 };
