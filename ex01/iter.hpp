@@ -6,7 +6,7 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 12:57:01 by yeju              #+#    #+#             */
-/*   Updated: 2022/04/12 13:17:58 by yeju             ###   ########.fr       */
+/*   Updated: 2022/04/12 16:29:15 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define ITER_HPP
 
 #include <iostream>
+
+template <typename T>
+void puls(T& a)
+{
+    ++a;
+};
 
 template <typename T>
 void iter(T *address, size_t len, void (*f)(T &))

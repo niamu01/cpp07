@@ -6,7 +6,7 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 13:30:47 by yeju              #+#    #+#             */
-/*   Updated: 2022/04/12 15:20:55 by yeju             ###   ########.fr       */
+/*   Updated: 2022/04/12 16:04:32 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Array
 {
 private:
     T *_array;
-    size_t _count;
+    unsigned int _count;
 
 public:
     Array()
@@ -28,7 +28,7 @@ public:
         _count = 0;
     };
 
-    Array (unsigned int n)
+    Array(unsigned int n)
     {
         _array = new T[n];
         _count = n;
@@ -38,11 +38,10 @@ public:
     {
         _count = rhs._count;
         _array = new T[rhs._count];
-        for (int i = 0; i < static_cast<int>(_count); i++)
+        for (unsigned int i = 0; i < _count; i++)
         {
             _array[i] = rhs._array[i];
         }
-        // _array = rhs._array;
     };
 
     ~Array()
