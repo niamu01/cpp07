@@ -6,7 +6,7 @@
 /*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 13:30:47 by yeju              #+#    #+#             */
-/*   Updated: 2022/04/12 14:35:54 by yeju             ###   ########.fr       */
+/*   Updated: 2022/04/12 15:20:55 by yeju             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ public:
     Array(Array const &rhs)
     {
         _count = rhs._count;
-        for (int i = 0; i < _count; i++)
+        _array = new T[rhs._count];
+        for (int i = 0; i < static_cast<int>(_count); i++)
         {
             _array[i] = rhs._array[i];
         }
@@ -52,8 +53,27 @@ public:
     Array<T>& operator=(Array<T> const & rhs)
     {
         _count = rhs._count;
-        _array = rhs._array;
+        ~Array();
+        _array = new T[rhs._count];
+        for (int i = 0; i < static_cast<int>(_count); i++)
+        {
+            _array[i] = rhs._array[i];
+        }
     };
+
+    T& operator[](int i) const
+    {
+        if (i < 0 || i >= static_cast<int>(_count))
+            throw Array::outOfBounds();
+        return (_array[i]);
+    }
+
+    T& operator[](int i)
+    {
+        if (i < 0 || i >= static_cast<int>(_count))
+            throw Array::outOfBounds();
+        return (_array[i]);
+    }
 
     size_t size()
     {

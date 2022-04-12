@@ -1,25 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yeju <yeju@student.42seoul.kr>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/12 15:24:08 by yeju              #+#    #+#             */
+/*   Updated: 2022/04/12 15:30:49 by yeju             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Array.hpp"
 
-#define MAX_VAL 750
 int main(int, char**)
 {
-    Array<int> numbers(MAX_VAL);
-    int* mirror = new int[MAX_VAL];
-    srand(time(NULL));
-    for (int i = 0; i < MAX_VAL; i++)
+    Array<int> numbers(10);
+    int* mirror = new int[10];
+    for (int i = 0; i < 10; i++)
     {
-        const int value = rand();
-        numbers[i] = value;
-        mirror[i] = value;
+        numbers[i] = i;
+        mirror[i] = i;
     }
-    //SCOPE
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
     }
 
-    for (int i = 0; i < MAX_VAL; i++)
+    for (int i = 0; i < 10; i++)
     {
         if (mirror[i] != numbers[i])
         {
@@ -37,17 +45,10 @@ int main(int, char**)
     }
     try
     {
-        numbers[MAX_VAL] = 0;
+        numbers[1] = 1;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-
-    for (int i = 0; i < MAX_VAL; i++)
-    {
-        numbers[i] = rand();
-    }
-    delete [] mirror;//
-    return 0;
 }
